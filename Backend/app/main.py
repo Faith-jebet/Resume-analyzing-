@@ -9,6 +9,20 @@ import sys
 import os
 import io
 
+_gmail_token = os.getenv("GMAIL_TOKEN")
+if _gmail_token:
+    # Running on Render — write token.json from environment variable
+    _token_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "Agent", "my_agent", "token.json")
+    os.makedirs(os.path.dirname(_token_path), exist_ok=True)
+    with open(_token_path, "w") as f:
+        json.dump(json.loads(_gmail_token), f)
+    print("✅ Gmail token.json written from environment variable")
+else:
+    print("ℹ️  No GMAIL_TOKEN env var found — using local token.json")
+
+# ── rest of your existing imports───────────────────────────────────────────
+from fastapi import FastAPI, HTTPException, UploadFile, File, Form
+
 MAIN_DIR = os.path.dirname(os.path.abspath(__file__))
 BACKEND_DIR = os.path.dirname(MAIN_DIR)
 PROJECT_ROOT = os.path.dirname(BACKEND_DIR)
