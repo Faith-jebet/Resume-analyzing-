@@ -1,6 +1,8 @@
 from dotenv import load_dotenv
 load_dotenv()
 
+import json  # ← ADD THIS LINE
+
 from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
