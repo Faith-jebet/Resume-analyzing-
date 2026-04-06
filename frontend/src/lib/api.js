@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const API_BASE = import.meta.env.VITE_API_URL || "https://recruitai-backend-418779851337.us-central1.run.app";
 
 /**
  * Send real resume files + JD file to the backend for AI ranking.

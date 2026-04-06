@@ -1,0 +1,3 @@
+-r Backend/requirements.txt
+pymupdf
+python-docx

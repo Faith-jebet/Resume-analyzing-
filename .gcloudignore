@@ -1,0 +1,11 @@
+.git
+.gitignore
+venv
+.venv
+Backend/venv
+Agent/.venv
+node_modules
+frontend
+*.pyc
+__pycache__
+.env
